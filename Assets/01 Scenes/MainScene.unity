@@ -1743,37 +1743,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 541829712}
   m_CullTransparentMesh: 1
---- !u!1 &556153483
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 556153485}
-  m_Layer: 0
-  m_Name: MainCanvasManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &556153485
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 556153483}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 440.98273, y: 541.41364, z: 191.77342}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &604832784
 GameObject:
   m_ObjectHideFlags: 0
@@ -4907,7 +4876,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1827192885}
   m_Layer: 0
-  m_Name: --------------- [Manager]
+  m_Name: ------------ [ETC]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10393,5 +10362,4 @@ SceneRoots:
   - {fileID: 170367630}
   - {fileID: 2131005025}
   - {fileID: 1827192885}
-  - {fileID: 556153485}
   - {fileID: 174884584}

@@ -44,13 +44,20 @@ public class GameManager : GenericSingleton<GameManager>
     [SerializeField] private GameObject spawnManagerObject;                                     // 스폰 매니저 오브젝트
     [SerializeField] private GameObject gameUiManagerObject;                                    // 게임 UI 매니저 오브젝트
 
+    // 대리자
     private GameRoundDelegate gameRoundDelegate;                                                // 게임 라운드 전달 값
     private ScoreDelegate scoreDelegate;                                                        // 게임 보드 전달 값
     private RoundTimeDelegate roundTimeDelegate;                                                // 게임 라운드 시간 전달 값
     private GameStateDelegate gameStateDelegate;                                                // 게임 상태 전달 값
+
+    // 매니저
     private PlayerSpawnManager playerSpawnManager;                                              // 플레이어 스폰 관리
     private EnemySpawnManager enemySpawnManager;                                                // 적 스폰 관리
     private GameUserInterfaceManager gameUserInterfaceManager;                                  // 게임 UI 관리
+
+    // 추상화
+    private ScoreBoardUiAbstract scoreBoardUiAbstract;
+    private SituationUiAbstract situationUiAbstract;
 
     private int gameScore = 0;                                                                  // 게임 스코어
     private int gameRound = 1;                                                                  // 게임 라운드
@@ -63,18 +70,21 @@ public class GameManager : GenericSingleton<GameManager>
         playerSpawnManager = spawnManagerObject.GetComponent<PlayerSpawnManager>();
         enemySpawnManager = spawnManagerObject.GetComponent<EnemySpawnManager>();
         gameUserInterfaceManager = gameUiManagerObject.GetComponent<GameUserInterfaceManager>();
+
+        scoreBoardUiAbstract = gameUserInterfaceManager.GetComponentInChildren<ScoreBoardUiAbstract>();
+        situationUiAbstract = gameUserInterfaceManager.GetComponentInChildren<SituationUiAbstract>();
     }
 
     private void Start()
     {
         gameModeDifficult = GameModeDifficulty.Easy;
-
-        gameRoundDelegate += gameUserInterfaceManager.GetRound;
-        gameStateDelegate += gameUserInterfaceManager.InterfaceStateControl;
-        scoreDelegate += gameUserInterfaceManager.GetScoreBoard;
-        roundTimeDelegate += gameUserInterfaceManager.GetRoundTime;
-
         AccordingToGameState(GameState.Ready);
+
+        // 대리자 이벤트 전달
+        roundTimeDelegate += scoreBoardUiAbstract.GetRoundTime;
+        gameStateDelegate += gameUserInterfaceManager.InterfaceStateControl;
+        scoreDelegate += scoreBoardUiAbstract.GetScoreBoard;
+        gameRoundDelegate += situationUiAbstract.GetRound;
     }
 
     public void AddScore(int score)

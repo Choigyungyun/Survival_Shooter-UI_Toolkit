@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PausePanelEvent : MonoBehaviour
+public class PausePanelEvent : GameUserInterfaceManager
 {
     [SerializeField] private Button playButton;
     [SerializeField] private Button settingButton;

@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SettingPanelEvent : MainCanvasManager
+public class MainSettingPanelEvent : MainCanvasManager
 {
     [Header("Setting panel UI")]
     [SerializeField] private Button soundSettingButton;
