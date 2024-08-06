@@ -14,25 +14,36 @@ public enum MainPanelState
 
 public class MainCanvasManager : MonoBehaviour
 {
-    protected List<GameObject> panelList = new List<GameObject>();
+    protected Dictionary<int, GameObject> panelDictionary;
+
+    private void Awake()
+    {
+        panelDictionary = new Dictionary<int, GameObject>();
+    }
 
     private void Start()
     {
+
         ChangePanel((int)MainPanelState.Start);
+
+        for (int panelIndex = 0; panelIndex < panelDictionary.Count; panelIndex++)
+        {
+            Debug.Log(panelDictionary[panelIndex].name);
+        }
     }
 
     protected void ChangePanel(int selector)
     {
-        for(int panelIndex = 0; panelIndex < panelList.Count; panelIndex++)
+        for(int panelIndex = 0; panelIndex < panelDictionary.Count; panelIndex++)
         {
-            if (panelList[panelIndex] == panelList[selector])
+            if (panelDictionary[panelIndex] == panelDictionary[selector])
             {
-                panelList[selector].SetActive(true);
-                Debug.Log($"Panel name : {panelList[selector]}");
+                panelDictionary[selector].SetActive(true);
+                Debug.Log($"Panel name : {panelDictionary[selector]}");
             }
             else
             {
-                panelList[panelIndex].SetActive(false);
+                panelDictionary[panelIndex].SetActive(false);
             }
         }
     }

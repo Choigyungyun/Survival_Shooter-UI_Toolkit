@@ -11,6 +11,11 @@ public class MainSettingPanelEvent : MainCanvasManager
     [SerializeField] private Button keySettingButton;
     [SerializeField] private Button settingBackButton;
 
+    private void Awake()
+    {
+        panelDictionary.Add(1, gameObject);
+    }
+
     private void Start()
     {
         soundSettingButton.onClick.AddListener(() => ChangePanel((int)MainPanelState.SoundSetting));

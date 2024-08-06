@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SituationPanelEvent : SituationUiAbstract
+public class SituationPanelEvent : GameUserInterfaceManager
 {
     [SerializeField] private Text situationText;
 
@@ -15,11 +15,6 @@ public class SituationPanelEvent : SituationUiAbstract
     private void Awake()
     {
         panelImage = GetComponent<Image>();
-    }
-
-    public override void GetRound(int round)
-    {
-        situationText.text = $"Day {round}";
     }
 
     public override void InterfaceStateControl(GameState gameState)

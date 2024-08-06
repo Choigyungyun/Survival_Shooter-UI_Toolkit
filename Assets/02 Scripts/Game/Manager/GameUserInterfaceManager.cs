@@ -4,21 +4,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class  ScoreBoardUiAbstract : GameUserInterfaceManager
+public abstract class SituationUiAbstract
 {
-    public abstract void GetRoundTime(float time);
-
-    public abstract void GetScoreBoard(int score);
-}
-
-public abstract class SituationUiAbstract : GameUserInterfaceManager
-{
-    public abstract void GetRound(int round);
+    public abstract void ViewRound(int round);
 }
 
 public class GameUserInterfaceManager : MonoBehaviour
 {
     protected float fadeTime = 2.0f;
+
+    public virtual void GetRound(int round)
+    {
+
+    }
+
+    public virtual void GetRoundTime(float time)
+    {
+
+    }
+
+    public virtual void GetScore(int score) { }
 
     public virtual void InterfaceStateControl(GameState gameState)
     {

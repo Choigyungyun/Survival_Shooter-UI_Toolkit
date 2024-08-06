@@ -55,10 +55,6 @@ public class GameManager : GenericSingleton<GameManager>
     private EnemySpawnManager enemySpawnManager;                                                // 적 스폰 관리
     private GameUserInterfaceManager gameUserInterfaceManager;                                  // 게임 UI 관리
 
-    // 추상화
-    private ScoreBoardUiAbstract scoreBoardUiAbstract;
-    private SituationUiAbstract situationUiAbstract;
-
     private int gameScore = 0;                                                                  // 게임 스코어
     private int gameRound = 1;                                                                  // 게임 라운드
     private float startTime = 60.9f;
@@ -70,9 +66,6 @@ public class GameManager : GenericSingleton<GameManager>
         playerSpawnManager = spawnManagerObject.GetComponent<PlayerSpawnManager>();
         enemySpawnManager = spawnManagerObject.GetComponent<EnemySpawnManager>();
         gameUserInterfaceManager = gameUiManagerObject.GetComponent<GameUserInterfaceManager>();
-
-        scoreBoardUiAbstract = gameUserInterfaceManager.GetComponentInChildren<ScoreBoardUiAbstract>();
-        situationUiAbstract = gameUserInterfaceManager.GetComponentInChildren<SituationUiAbstract>();
     }
 
     private void Start()
@@ -81,10 +74,7 @@ public class GameManager : GenericSingleton<GameManager>
         AccordingToGameState(GameState.Ready);
 
         // 대리자 이벤트 전달
-        roundTimeDelegate += scoreBoardUiAbstract.GetRoundTime;
         gameStateDelegate += gameUserInterfaceManager.InterfaceStateControl;
-        scoreDelegate += scoreBoardUiAbstract.GetScoreBoard;
-        gameRoundDelegate += situationUiAbstract.GetRound;
     }
 
     public void AddScore(int score)
@@ -108,7 +98,7 @@ public class GameManager : GenericSingleton<GameManager>
                 roundTimeDelegate?.Invoke(startTime);
                 break;
             case GameState.Play:
-                enemySpawnManager.SpawnSettingToDifficult(gameModeDifficult);
+                enemySpawnManager.InitializeSpawnDifficult(gameModeDifficult);
                 StartCoroutine(RoundTime(startTime));
                 break;
             case GameState.Pause:

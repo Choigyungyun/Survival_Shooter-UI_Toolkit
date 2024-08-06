@@ -29,7 +29,7 @@ public class EnemySpawnManager : MonoBehaviour
         SpawnEnemyToDifficult(GameManager.Instance.gameModeDifficult);
     }
 
-    public void SpawnSettingToDifficult(GameModeDifficulty mode)
+    public void InitializeSpawnDifficult(GameModeDifficulty mode)
     {
         GameManager.Instance.gameModeDifficult = mode;
 

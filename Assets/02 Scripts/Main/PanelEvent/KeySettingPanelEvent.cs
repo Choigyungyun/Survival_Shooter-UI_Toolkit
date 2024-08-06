@@ -12,6 +12,11 @@ public class KeySettingPanelEvent : MainCanvasManager
     [SerializeField] private InputField rightInputField;
     [SerializeField] private Button settingBackButton;
 
+    private void Awake()
+    {
+        panelDictionary.Add(3, gameObject);
+    }
+
     private void Start()
     {
         settingBackButton.onClick.AddListener(() => ChangePanel((int)MainPanelState.Start));

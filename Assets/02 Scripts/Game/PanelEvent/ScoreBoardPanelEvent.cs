@@ -3,20 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreBoardPanelEvent : ScoreBoardUiAbstract
+public class ScoreBoardPanelEvent : GameUserInterfaceManager
 {
     [SerializeField] private Text scoreBoardText;
     [SerializeField] private Text roundTimeText;
-
-    public override void GetRoundTime(float time)
-    {
-        roundTimeText.text = $"Time : {time}";
-    }
-
-    public override void GetScoreBoard(int score)
-    {
-        scoreBoardText.text = $"Score : {score}";
-    }
 
     public override void InterfaceStateControl(GameState gameState)
     {

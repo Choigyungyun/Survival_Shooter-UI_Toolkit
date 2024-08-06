@@ -5,8 +5,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-using GameSettingProperty;
-
 public class StartPanelEvent : MainCanvasManager
 {
     [Header("Start panel UI")]
@@ -15,13 +13,10 @@ public class StartPanelEvent : MainCanvasManager
     [SerializeField] private Button quitButton;
     [SerializeField] private Button creatorButton;
 
-    private void Awake()
-    {
-        panelList.Add(gameObject);
-    }
-
     private void Start()
     {
+        panelDictionary.Add(0, gameObject);
+
         startButton.onClick.AddListener(GameStart);
         settingButton.onClick.AddListener(() => ChangePanel((int)MainPanelState.Setting));
         quitButton.onClick.AddListener(QuitGame);
