@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/05.%20UXML/Styles/ButtonStyle.uss?fileID=7433441132597879392&amp;guid=16becab96f5aaf64ab1a324a7652bebb&amp;type=3#ButtonStyle" />
+    <ui:VisualElement name="background" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 100%; height: 100%; align-items: center; justify-content: space-around;">
+        <ui:VisualElement name="home_tile_group" style="flex-grow: 1; height: 35%; width: 100%; align-items: center; justify-content: flex-end; align-self: auto;">
+            <ui:Label tabindex="-1" text="Survival Shooter" parse-escape-sequences="true" display-tooltip-when-elided="true" name="title_text" style="-unity-text-align: upper-center; color: rgb(255, 255, 255); -unity-font: url(&quot;project://database/Assets/04%20Items/Fonts/LuckiestGuy/LuckiestGuy.ttf?fileID=12800000&amp;guid=46238fb1ad7a7a84ba8954c1c860994c&amp;type=3#LuckiestGuy&quot;); -unity-font-definition: initial; font-size: 80px; flex-direction: row; justify-content: center;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="home_menu" style="flex-grow: 1; width: 100%; height: 75%; align-items: center; justify-content: center;">
+            <ui:VisualElement name="menu_button_group" style="flex-grow: 1; width: 50%; height: 50%; align-items: center; justify-content: space-between; flex-direction: column; padding-bottom: 125px; padding-top: 125px; margin-top: 0; margin-bottom: 0; padding-right: 0; padding-left: 0;">
+                <ui:Button text="Start" parse-escape-sequences="true" display-tooltip-when-elided="true" name="start_button" class="menu-button" />
+                <ui:Button text="Setting" parse-escape-sequences="true" display-tooltip-when-elided="true" name="setting_button" class="menu-button" />
+                <ui:Button text="Quit" parse-escape-sequences="true" display-tooltip-when-elided="true" name="quit_button" class="menu-button" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

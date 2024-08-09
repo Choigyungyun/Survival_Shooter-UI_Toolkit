@@ -1,0 +1,33 @@
+.setting-select-button {
+    width: 49.9%;
+    height: 100%;
+    background-color: rgba(45, 45, 45, 0.49);
+    font-size: 40px;
+    padding-top: 1px;
+    padding-right: 1px;
+    padding-bottom: 1px;
+    padding-left: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    white-space: nowrap;
+    -unity-text-align: lower-center;
+    align-items: stretch;
+    display: flex;
+    visibility: visible;
+    overflow: hidden;
+    -unity-slice-scale: 1px;
+    -unity-slice-right: 0;
+    -unity-slice-top: 0;
+    -unity-slice-left: 0;
+    -unity-font-definition: initial;
+    -unity-font: url("project://database/Assets/04%20Items/Fonts/LuckiestGuy/LuckiestGuy.ttf?fileID=12800000&guid=46238fb1ad7a7a84ba8954c1c860994c&type=3#LuckiestGuy");
+    color: rgb(255, 255, 255);
+}

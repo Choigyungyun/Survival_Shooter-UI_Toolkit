@@ -1,0 +1,22 @@
+.menu-button {
+    -unity-font-definition: initial;
+    -unity-font: url("project://database/Assets/04%20Items/Fonts/LuckiestGuy/LuckiestGuy.ttf?fileID=12800000&guid=46238fb1ad7a7a84ba8954c1c860994c&type=3#LuckiestGuy");
+    font-size: 40px;
+    width: 300px;
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+    transition-timing-function: ease-in-out-elastic;
+    transition-duration: 0.5s;
+}
+
+.menu-button:hover {
+    scale: 1.1 1.1;
+    transition-duration: 0s;
+    transition-timing-function: ease;
+}
+
+.menu-button:active {
+    background-color: rgb(171, 171, 171);
+    transition-timing-function: ease;
+    transition-duration: 0s;
+}
